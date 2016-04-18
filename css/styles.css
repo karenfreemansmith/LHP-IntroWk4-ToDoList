@@ -1,0 +1,12 @@
+body {
+  background-color: pink;
+}
+h1 {
+  background-color: #f9f9f9;
+  color: #333333;
+  font-size: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  border-radius: 25px;
+}

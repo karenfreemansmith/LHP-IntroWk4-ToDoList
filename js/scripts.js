@@ -1,85 +1,159 @@
 //alert("jQuery is working on " + $("h1").text()); //test for jQuery linked and loaded correctly
 //business logic (or list of goals as objects)
+function Item(description, status) {
+  this.description=description;
+  this.status=status;
+}
+
 var Items = [
   {
-    "goal":"Prepare for Epicodus",
-    "steps":[
-      "Complete online Intro coursework",
-      "Start Java coursework",
-      "Start Ruby coursework",
-      "Start PHP coursework",
-      "Start C# coursework",
-      "Start JavaScript coursework",
-      "Complete CSS coursework",
-      "Complete Design coursework"]
+    "course":"Intro to Programming",
+    "level": 1,
+    "topics":["Getting Started at Epicodus",
+              "Getting Started with Programming",
+              "Git, HTML, and CSS",
+              "JavaScript and jQuery",
+              "Arrays & Looping",
+              "Object-oriented JavaScript",
+              "Team Week"]
   },
   {
-    "goal":"Get 20,000 points on TeamTreeHouse",
-    "steps": [
-      "answer daily question in community",
-      "complete daily badge for lowest ranked subject",
-      "complete recommended steps",
-      "complete daily badge for most interesting subject"
-    ]
+    "course":"JavaScript",
+    "level":2.5,
+    "topics":["Getting Started with JavaScript",
+              "Modern JS apps",
+              "Angular JS",
+              "Ember JS",
+              "Ember Extended",
+              "Team Week"]
   },
   {
-    "goal":"Complete FreeCodeCamp Certification",
-    "steps": [
-      "Front-End Developer Certification",
-      "Data Visualization Certification",
-      "Back-End Developer Certification",
-      "Full-Stack Web Developer Certificaiton"
-    ]
+    "course":"Java",
+    "level": 2,
+    "topics":["Getting Started with Java",
+              "Java Basics",
+              "Java Applications",
+              "Java Branching & Looping",
+              "How the Web Works",
+              "Spark",
+              "Behavior-driven Development(theory)",
+              "Behavior-driven Development with Java",
+              "Object-oriented Java",
+              "Java Database Basics",
+              "Advanced Dababases",
+              "Team Week"]
   },
   {
-    "goal":"Change Careers from Trucking to Web Development",
-    "steps": [
-      "Call leasing to find out options for getting out of truck",
-      "Recruit driver as needed",
-      "Get load to Springfield (or where ever driver is)",
-      "Clean out truck",
-      "Bus to Portland",
-      "Catch up on sleep and detox from OTR diet",
-      "Review resume",
-      "Update portfolio",
-      "Research local companies and job openings"
-    ]
+    "course":"Android",
+    "level": 3,
+    "topics":["Getting Started with Android",
+              "Introduction to Android",
+              "User Interface Basics",
+              "Web Service Backends and Fragments",
+              "Data Persistence",
+              "Gestures, Animations & Flexible UIs",
+              "Personal Projects"]
   },
   {
-    "goal":"Restore health and fitness",
-    "steps": [
-      "Eliminate toxins from diet",
-      "Replace junk with healthy food items, maintain 2400-3000 calories/day",
-      "Regulate sleep to 5-7 hours every night",
-      "Create and follow stretching routine (Tai Chi/Yoga/Qui Jong)",
-      "Create and follow strength conditioning routine (crunches, squats, pushups)",
-      "Start walking and increase endurance by keeping within target heart range (125pbm)"
-    ]
+    "course":"PHP",
+    "level": 2,
+    "topics":["Getting Started with PHP",
+              "PHP Basics",
+              "PHP Branching & Looping",
+              "Object-oriented PHP prep",
+              "Object-oriented PHP",
+              "Behavior-driven Development with PHP",
+              "Database Basics with PHP",
+              "Databases Extended",
+              "Team Week"]
   },
   {
-    "goal":"Organize Eugene household",
-    "steps": [
-      "Remove standing trash",
-      "Do laundry and donate old clothing",
-      "Find place to store clean linens",
-      "Eliminate any remaining clutter and sweep/vacuum floors",
-      "Organize books",
-      "Organize CDs & DVDs",
-      "Organize and donate/replace kitchenware as needed",
-      "Sort storage boxes and eliminate old unwanteds items"
-    ]
+    "course":"Drupal",
+    "level": 3,
+    "topics":["Site Building with the Drupal Interface",
+              "Module Development",
+              "Extending Drupal",
+              "Advanced Drupal",
+              "Personal Projects"]
   },
   {
-    "goal":"Create and adjust to new routines",
-    "steps": [
-      "Find workspace in Eugene house and organize work items",
-      "Work with Johnathan on regular cleaning routines (cat box, dishes, etc)",
-      "Find workspace in Portland house and organize work items",
-      "Find clothing & personal item space in Portland and organize personal effects",
-      "Setup regular routines for spending family time together",
-      "Setup regular routines for work and study time",
-      "Reinforce new diet and exercise habits in new location"
-    ]
+    "course":"C#",
+    "level": 2,
+    "topics":["Getting Started with C#",
+              "C# Basics",
+              "Writing C# Programs",
+              "C# Branching & Looping",
+              "Object-oriented C#",
+              "Web Apps with Nancy",
+              "Behavior-driven Development with C#",
+              "C# Database Basics",
+              "Advanced Databases",
+              "Team Week"]
+  },
+  {
+    "course":".NET",
+    "level": 3,
+    "topics":["ASP.NET MVC",
+              "Authentication and Testing",
+              "Database Testing and AJAX",
+              "APIs",
+              "Personal Projects"]
+  },
+  {
+    "course":"CSS",
+    "level": 2,
+    "topics":["Getting Started with CSS",
+              "Moving Forward with CSS",
+              "Responsive Design",
+              "SASS",
+              "Beyond the Basics",
+              "Team Week"]
+  },
+  {
+    "course":"Design",
+    "level": 3,
+    "topics":["Getting Started with Design",
+              "Design Foundations",
+              "User Interface (UI) & Atomic Design",
+              "User Experience (UX) & the Design Process",
+              "Portfolios and Case Studies",
+              "Personal Project"]
+  },
+  {
+    "course":"Ruby",
+    "level": 2,
+    "topics":["Getting Started with Ruby",
+              "Ruby Basics",
+              "Ruby Branching & Looping",
+              "Sinatra",
+              "Behavior-driven Development with Ruby",
+              "Object-oriented Ruby",
+              "Ruby Database Basics",
+              "Databases with Active Record",
+              "Team Week"]
+  },
+  {
+    "course":"Rails",
+    "level": 3,
+    "topics":["Getting Started with Rails",
+              "Ruby on Rails Basics",
+              "Rails Authentication",
+              "AJAX",
+              "APIs",
+              "Personal Project"]
+  },
+  {
+    "course":"Internship & Job Placement",
+    "level": 4,
+    "topics":["Resume & LinkedIn",
+              "Cover Letter",
+              "Sprucing up GitHub",
+              "Homepage/Portfolio Site",
+              "Non-technical Interview",
+              "Technical Interviews",
+              "Interview Research",
+              "Interview Tips",
+              "Negotiating a Salary"]
   }
 ];
 
@@ -88,11 +162,11 @@ var Items = [
 var listHTML="";
 $("#goals").children().remove();
 Items.forEach(function(item) {
-  listHTML+="<li>" + item.goal;
-  if(item.steps!==undefined) {
+  listHTML+="<li>" + item.course;
+  if(item.topics!==undefined) {
     listHTML+="<ul>";
-    item.steps.forEach(function(step) {
-      listHTML+="<li>" + step + "</li>";
+    item.topics.forEach(function(topic) {
+      listHTML+="<li>" + topic + "</li>";
     });
   listHTML+="</ul></li>";
   } else {

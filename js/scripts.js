@@ -1,8 +1,8 @@
 //<!-- Back End -->
-function Task(description){
+function Task(description, assignedTo){
   this.taskName = description;
   this.finished = false;
-  this.assignedTo = "";
+  this.assignedTo = assignedTo;
 }
 
 Task.prototype.toggleTask = function() {
@@ -13,8 +13,8 @@ Task.prototype.toggleTask = function() {
 $(document).ready(function(){
   $("form#inputForm").submit(function(event){
     event.preventDefault();
-    var myTask = new Task($("#input").val());
-    $("#result ul").append("<li>" + myTask.taskName + "</li>");
+    var myTask = new Task($("#input").val(), $("#assignTo").val().toLowerCase());
+    $("#result ul#"+myTask.assignedTo).append("<li>" + myTask.taskName + "</li>");
     $("li").last().click(function() {
       myTask.toggleTask();
       if(myTask.finished) {
@@ -25,4 +25,7 @@ $(document).ready(function(){
     });
     $("form")[0].reset();
   });
+  $( "#bob, #steve, #fred" ).sortable({
+    connectWith: ".connectedSortable"
+  }).disableSelection();
 });

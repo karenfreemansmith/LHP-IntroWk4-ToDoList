@@ -17,7 +17,7 @@ $(document).ready(function(){
     var myTask = new Task($("#input").val(), $("#assignTo").val().toLowerCase());
     tasks.push(myTask);
     $("#result ul#"+myTask.assignedTo).append("<li>" + myTask.taskName + "</li>");
-    $("li").last().dblclick(function() {
+    $("ul#"+myTask.assignedTo + " li").last().dblclick(function() {
       myTask.toggleTask();
       if(myTask.finished) {
         $(this).addClass("done");

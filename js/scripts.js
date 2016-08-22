@@ -8,14 +8,16 @@ function Task(description, assignedTo){
 Task.prototype.toggleTask = function() {
   this.finished = !this.finished;
 }
-
+var tasks=[];
 //<!-- Front End  -->
 $(document).ready(function(){
+
   $("form#inputForm").submit(function(event){
     event.preventDefault();
     var myTask = new Task($("#input").val(), $("#assignTo").val().toLowerCase());
+    tasks.push(myTask);
     $("#result ul#"+myTask.assignedTo).append("<li>" + myTask.taskName + "</li>");
-    $("li").last().click(function() {
+    $("li").last().dblclick(function() {
       myTask.toggleTask();
       if(myTask.finished) {
         $(this).addClass("done");
@@ -28,4 +30,13 @@ $(document).ready(function(){
   $( "#bob, #steve, #fred" ).sortable({
     connectWith: ".connectedSortable"
   }).disableSelection();
+  $( "#bob, #steve, #fred" ).on( "sortreceive", function( event, ui ) {
+    var newAssignment = $(this).attr("id");
+    var thisTask = ui.item.text();
+    tasks.forEach(function(task){
+      if(task.taskName === thisTask){
+        task.assignedTo = newAssignment;
+      }
+    })
+  } );
 });

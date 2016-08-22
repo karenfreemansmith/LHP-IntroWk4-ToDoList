@@ -1,0 +1,14 @@
+.done {
+  text-decoration: line-through;
+}
+#draggable, #draggable2 {
+  border: solid black 2px;
+  background-color: blue;
+}
+
+.not-draggable {
+  border: solid black 2px;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+}

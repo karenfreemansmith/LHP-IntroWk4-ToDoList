@@ -8,7 +8,9 @@ function Task(description, assignedTo){
 Task.prototype.toggleTask = function() {
   this.finished = !this.finished;
 }
+
 var tasks=[];
+
 //<!-- Front End  -->
 $(document).ready(function(){
 
@@ -27,10 +29,10 @@ $(document).ready(function(){
     });
     $("form")[0].reset();
   });
-  $( "#bob, #steve, #fred" ).sortable({
+  $( "#katy, #steve, #dmitri" ).sortable({
     connectWith: ".connectedSortable"
   }).disableSelection();
-  $( "#bob, #steve, #fred" ).on( "sortreceive", function( event, ui ) {
+  $( "#katy, #steve, #dmitri" ).on( "sortreceive", function( event, ui ) {
     var newAssignment = $(this).attr("id");
     var thisTask = ui.item.text();
     tasks.forEach(function(task){

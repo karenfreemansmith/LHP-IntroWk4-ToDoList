@@ -14,25 +14,25 @@
   <body>
     <!-- Simple Form Input for Testing -->
     <div class="container">
-      <form id="inputForm">
+      <form id="inputForm" class="form-inline">
         <div class="form-group">
           <label for="input">Input a task:</label>
           <input id="input" class="form-control" type="text">
         </div>
         <div class="form-group">
           <label for="assignTo">Assign task to:</label>
-          <select id="assignTo">
+          <select class="form-control" id="assignTo">
             <option checked>Steve</option>
-            <option>Bob</option>
-            <option>Fred</option>
+            <option>Katy</option>
+            <option>Dmitri</option>
           </select>
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
       </form>
       <div id="result" class="row">
         <div class="col-md-4">
-          <h3>Bob</h3>
-          <ul id="bob" class="connectedSortable">
+          <h3>Katy</h3>
+          <ul id="katy" class="connectedSortable">
           </ul>
         </div>
         <div class="col-md-4">
@@ -41,8 +41,8 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <h3>Fred</h3>
-          <ul id="fred" class="connectedSortable">
+          <h3>Dmitri</h3>
+          <ul id="dmitri" class="connectedSortable">
           </ul>
         </div>
       </div>

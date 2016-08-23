@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   background-color: pink;
 }
@@ -9,4 +10,48 @@ h1 {
   text-align: center;
   font-family: 'Great Vibes', cursive;
   border-radius: 25px;
+=======
+.done {
+  text-decoration: line-through;
+}
+#draggable, #draggable2 {
+  border: solid black 2px;
+  background-color: blue;
+}
+
+.not-draggable {
+  border: solid black 2px;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+}
+
+.form-group {
+  margin-right: 10px;
+}
+
+#katy, #steve, #dmitri {
+  border: 1px solid #eee;
+  min-height: 20px;
+  list-style-type:circle;
+  margin: 0;
+  padding: 5px 0 0 0;
+}
+#katy li, #steve li, #dmitri li {
+  margin: 0 5px 5px 5px;
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+body {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.container {
+    width: 80%;
+    margin-top: 450px;
+>>>>>>> bbe045fdc54ad6fd4c91fcd4d02365f959345786
 }
